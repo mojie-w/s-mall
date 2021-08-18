@@ -26,8 +26,8 @@
 <script>
 // import TabBar from "./tarbar/TabBar.vue";
 // 使用别名  如果不是使用 import 引入路径, 需要在路径前加 ~
-import TabBar from "components/tarbar/TabBar.vue";
-import TabBarItem from "components/tarbar/TabBarItem.vue";
+import TabBar from "components/common/tarbar/TabBar.vue";
+import TabBarItem from "components/common/tarbar/TabBarItem.vue";
 export default {
  components: {
     TabBar,

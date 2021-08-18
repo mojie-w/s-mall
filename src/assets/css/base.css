@@ -45,8 +45,8 @@ a {
   display: block;
   width: 0;
   height: 0;
-  visibility: hidden;
-}
+  visibility: hidden;  
+}  
 
 .clear-fix {
   zoom: 1;
