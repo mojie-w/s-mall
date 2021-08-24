@@ -36,3 +36,4 @@ const router = new VueRouter({
 
 // 3.导出
 export default router
+

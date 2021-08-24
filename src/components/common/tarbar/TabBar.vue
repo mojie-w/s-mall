@@ -14,7 +14,7 @@ export default {
 #tab-bar {
   display: flex;
   background-color: #f6f6f6;
-  /* 绝对定位,相对于浏览器窗口定位 */
+  /* 固定定位,绝对定位,相对于浏览器窗口定位 */
   position: fixed;
   left: 0;
   right: 0;
