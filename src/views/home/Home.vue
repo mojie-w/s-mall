@@ -6,7 +6,10 @@
     <home-swiper :banners="banners" />
     <recommend-view :recommends="recommends"></recommend-view>
     <feature-view></feature-view>
-
+    <tab-control
+      :titles="['流行', '精选', '新款']"
+      class="tab-control"
+    ></tab-control>
     <ul>
       <li>列表1</li>
       <li>列表2</li>
@@ -109,15 +112,16 @@
       <li>列表99</li>
       <li>列表100</li>
     </ul>
-    
   </div>
 </template>
 
 <script>
 import NavBar from "components/common/navbar/NavBar.vue";
+import TabControl from "components/content/tabControl/TabControl.vue";
+
 import HomeSwiper from "./childComps/HomeSwiper.vue";
 import RecommendView from "./childComps/RecommendView.vue";
-import FeatureView from './childComps/FeatureView.vue'
+import FeatureView from "./childComps/FeatureView.vue";
 
 import { getHomeMultidata } from "network/home";
 
@@ -125,9 +129,10 @@ export default {
   name: "Home",
   components: {
     NavBar,
+    TabControl,
     HomeSwiper,
     RecommendView,
-    FeatureView
+    FeatureView,
   },
   data() {
     return {
@@ -145,6 +150,7 @@ export default {
       /* this.dKeywords = res.data.dKeyword.list
       this.keywords = res.data.keywords.list */
       this.recommends = res.data.recommend.list;
+      // console.log(this.recommends);
     });
   },
 };
@@ -162,5 +168,10 @@ export default {
 }
 #home {
   padding-top: 44px;
+}
+.tab-control {
+  position: sticky;
+  top: 44px;
+  background-color: #fff;
 }
 </style>
