@@ -5,7 +5,7 @@
     </nav-bar>
 
     <scroll class="content" ref="scroll">
-      <home-swiper :banners="banners" />
+      <home-swiper :banners="banners"/>
       <recommend-view :recommends="recommends"></recommend-view>
       <feature-view></feature-view>
       <tab-control
@@ -19,7 +19,7 @@
     <back-top @click.native="backClick"></back-top>
   </div>
 </template>
- 
+
 <script>
 import NavBar from "components/common/navbar/NavBar.vue";
 import TabControl from "components/content/tabControl/TabControl.vue";
@@ -31,7 +31,7 @@ import FeatureView from "./childComps/FeatureView.vue";
 import Scroll from "components/common/scroll/Scroll.vue";
 import BackTop from "../../components/content/backTop/BackTop.vue";
 
-import { getHomeMultidata, getHomeGoods } from "network/home";
+import {getHomeMultidata, getHomeGoods} from "network/home";
 
 export default {
   name: "Home",
@@ -52,9 +52,9 @@ export default {
       keywords: [], */
       recommends: [],
       goods: {
-        pop: { page: 0, list: [] },
-        new: { page: 0, list: [] },
-        sell: { page: 0, list: [] },
+        pop: {page: 0, list: []},
+        new: {page: 0, list: []},
+        sell: {page: 0, list: []},
       },
       currentType: "pop",
     };
@@ -129,18 +129,21 @@ export default {
   top: 0;
   z-index: 8;
 }
+
 #home {
   padding-top: 44px;
   /* 视口高度 */
   height: 100vh;
   position: relative;
 }
+
 .tab-control {
   position: sticky;
   top: 44px;
   background-color: #fff;
   z-index: 10;
 }
+
 .content {
   /* height: 300px; */
   overflow: hidden;
