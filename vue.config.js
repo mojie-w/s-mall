@@ -1,4 +1,4 @@
-module.exports = {
+/*module.exports = {
   configureWebpack: {
     resolve: { //解决路径相关的问题
       alias: {
@@ -9,9 +9,9 @@ module.exports = {
       },
     },
   },
-}
-
-/*const path = require('path');
+}*/
+//在webstorm 中使用下面的可以有一个完美的索引支持
+const path = require('path');
 
 function resolve(dir) {
   return path.join(__dirname, dir);
@@ -26,7 +26,7 @@ module.exports = {
       .set('common', resolve('src/common'))
       .set('components', resolve('src/components'))
       .set('network', resolve('src/network'))
-      .set('@v', resolve('src/views'))
+      .set('views', resolve('src/views'))
     // 这里只写了两个个，你可以自己再加，按这种格式.set('', resolve(''))
   },
-};*/
+};
