@@ -4,7 +4,8 @@
       <div slot="center">购物街</div>
     </nav-bar>
 
-    <scroll class="content" ref="scroll">
+    <scroll class="content" ref="scroll" :probe-type="3" @scroll="contentScroll" :pull-up-load="true"
+            @pullingUp="loadMore">
       <home-swiper :banners="banners"/>
       <recommend-view :recommends="recommends"></recommend-view>
       <feature-view></feature-view>
@@ -16,7 +17,7 @@
       <goods-list :goods="showGoods"></goods-list>
     </scroll>
 
-    <back-top @click.native="backClick"></back-top>
+    <back-top @click.native="backClick" v-show="isShowBackTop"></back-top>
   </div>
 </template>
 
@@ -57,6 +58,7 @@ export default {
         sell: {page: 0, list: []},
       },
       currentType: "pop",
+      isShowBackTop: false,
     };
   },
   computed: {
@@ -74,8 +76,9 @@ export default {
   },
   methods: {
     // 事件监听相关
+    //请求精选, 流行, 等数据
     tabClick(index) {
-      console.log(index);
+      // console.log(index);
       switch (index) {
         case 0:
           this.currentType = "pop";
@@ -87,13 +90,25 @@ export default {
           this.currentType = "sell";
           break;
       }
-      console.log(this.currentType);
+      // console.log(this.currentType);
     },
+    //回到顶部
     backClick() {
       // 监听组件时必须是@click.native="backClick"
       // $refs取的scroll 是给Scroll组件了 ref='scroll'
       // 调用Scroll组件(this.$refs.scroll)的scrollTo()方法
       this.$refs.scroll.scrollTo(0, 0);
+    },
+    //显示回到顶部按钮
+    contentScroll(position) {
+      // console.log(position)
+      this.isShowBackTop = -position.y > 1000
+    },
+    //上拉加载更多
+    loadMore() {
+      console.log('上拉加载')
+      this.getHomeGoods(this.currentType)
+
     },
     // 网络请求相关
     getHomeMultidata() {
@@ -109,10 +124,12 @@ export default {
     getHomeGoods(type) {
       const page = this.goods[type].page + 1;
       getHomeGoods(type, page).then((res) => {
-        console.log(res);
+        // console.log(res);
         // 将这30条数据解构出来在push进list
         this.goods[type].list.push(...res.data.list);
         this.goods[type].page += 1;
+
+        this.$refs.scroll.finishPullUp()
       });
     },
   },

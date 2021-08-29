@@ -29,7 +29,7 @@ export default {
   methods: {
     itemClick(index) {
       this.currentIndex = index;
-      this.$emit('tabClick',index)
+      this.$emit('tabClick', index)
     },
   },
 };
@@ -43,12 +43,15 @@ export default {
   text-align: center;
   font-size: 15px;
 }
+
 .tab-control div {
   flex: 1;
 }
+
 .tab-control div > span {
   padding: 5px 10px;
 }
+
 .active {
   color: var(--color-high-text);
 }

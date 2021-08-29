@@ -6,7 +6,7 @@
       class="recommend-item"
     >
       <a :href="item.link">
-        <img :src="item.image" alt="" />
+        <img :src="item.image" alt=""/>
         <div>{{ item.title }}</div>
       </a>
 
@@ -38,10 +38,12 @@ export default {
   padding: 10px 0 20px;
   border-bottom: 8px solid #eee;
 }
+
 .recommend-item {
   /* 均等分 */
   flex: 1;
 }
+
 .recommend-item img {
   height: 65px;
   margin-bottom: 10px;

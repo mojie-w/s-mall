@@ -1,18 +1,18 @@
 @import './normalize.css';
 
 :root {
-  /* 
+  /*
   伪类 :root ->获取根元素 html
   css定义变量
     如  --large-size: 50px;
     使用时   var(--large-size)
   */
-  --color-text: #666;  /* 文字颜色 */
-  --color-high-text: #ff5777;  /* 文字高亮颜色 */
-  --color-tint: #ff8198;  /*  导航等背景颜色 */
+  --color-text: #666; /* 文字颜色 */
+  --color-high-text: #ff5777; /* 文字高亮颜色 */
+  --color-tint: #ff8198; /*  导航等背景颜色 */
   --color-background: #fff; /* 背景颜色 */
-  --font-size: 14px;  /* 字体大小 */
-  --line-height: 1.5;  
+  --font-size: 14px; /* 字体大小 */
+  --line-height: 1.5;
 }
 
 *,
@@ -38,6 +38,7 @@ a {
   color: var(--color-text);
   text-decoration: none;
 }
+
 /* 清除浮动 */
 .clear-fix::after {
   clear: both;
@@ -45,8 +46,8 @@ a {
   display: block;
   width: 0;
   height: 0;
-  visibility: hidden;  
-}  
+  visibility: hidden;
+}
 
 .clear-fix {
   zoom: 1;

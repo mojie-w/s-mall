@@ -10,32 +10,62 @@
 
 <script>
 import BScroll from "better-scroll";
+
 export default {
   name: "Scroll",
+  props: {
+    probeType: {
+      type: Number,
+      default: 0,
+    },
+    pullUpLoad: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {
       scroll: null,
     };
   },
   mounted() {
+    //1.创建BScroll对象
     this.scroll = new BScroll(this.$refs.wrapper, {
       scrollY: true,
       click: true,
-      mouseWheel: {
-        speed: 20,
-        invert: false,
-        easeTime: 300,
-      },
+      // mouseWheel: { //probeType为3 的时候,可以监听滚动的坐标但是使用滚轮不受probeType的影响,它总是滚动的
+      //   speed: 20,
+      //   invert: false,
+      //   easeTime: 300,
+      // },
+      //滚动位置
+      probeType: this.probeType,
+      pullUpLoad: this.pullUpLoad,
     });
+    //2.监听滚动的位置
+    this.scroll.on('scroll', position => {
+      // console.log(position)
+      //自定义一个事件,将position发出
+      this.$emit('scroll', position)
+    })
+    // 3.监听上拉事件
+    this.scroll.on('pullingUp', () => {
+      // console.log('上拉加载更多')
+      this.$emit('pullingUp')
+    })
+
   },
   methods: {
     scrollTo(x, y, time = 300) {
       // this.scroll 是BScroll对象
       this.scroll.scrollTo(x, y, time);
     },
+    finishPullUp() {
+      this.scroll.finishPullUp()
+    },
   },
 };
 </script>
 
-<style  scoped>
+<style scoped>
 </style>>

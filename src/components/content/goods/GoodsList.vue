@@ -13,6 +13,7 @@
 
 <script>
 import GoodsListItem from "./GoodsListItem.vue";
+
 export default {
   components: {
     GoodsListItem,
@@ -35,6 +36,7 @@ export default {
   justify-content: space-around;
   padding: 2px;
 }
+
 .pullup {
   width: 100%;
   height: 49px;

@@ -7,31 +7,31 @@ const ShopCart = () => import('../views/shopcart/ShopCart.vue')
 const Profile = () => import('../views/profile/Profile.vue')
 // 1. 安装router
 Vue.use(VueRouter)
-// 2.创建router 
+// 2.创建router
 const routes = [{
-    path: '',
-    redirect: '/home'
-  },
+  path: '',
+  redirect: '/home',
+},
   {
     path: '/home',
-    component: Home
+    component: Home,
   },
   {
     path: '/category',
-    component: Category
+    component: Category,
   },
   {
     path: '/shopcart',
-    component: ShopCart
+    component: ShopCart,
   },
   {
     path: '/profile',
-    component: Profile
-  }
+    component: Profile,
+  },
 ]
 const router = new VueRouter({
   routes,
-  mode: 'history'
+  mode: 'history',
 })
 
 // 3.导出

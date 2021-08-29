@@ -1,7 +1,7 @@
 <template>
   <div class="goods-item">
     <a :href="goodsItem.link">
-      <img :src="goodsItem.show.img" alt="" />
+      <img :src="goodsItem.show.img" alt=""/>
       <div class="goods-info">
         <p>{{ goodsItem.title }}</p>
         <span class="price">{{ goodsItem.price }}</span>
@@ -32,10 +32,12 @@ export default {
 
   width: 43%;
 }
+
 .goods-item img {
   width: 100%;
   border-radius: 5px;
 }
+
 .goods-info {
   font-size: 12px;
   position: absolute;
@@ -45,18 +47,22 @@ export default {
   overflow: hidden;
   text-align: center;
 }
+
 .goods-info p {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
 .goods-info .price {
   color: var(--color-high-text);
   margin-right: 20px;
 }
+
 .goods-info .collect {
   position: relative;
 }
+
 .goods-info .collect::before {
   content: "";
   position: absolute;
