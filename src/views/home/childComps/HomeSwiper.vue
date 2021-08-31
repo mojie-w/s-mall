@@ -2,20 +2,20 @@
   <swiper>
     <swiper-item v-for="(item, index) in banners" :key="index">
       <a :href="item.link">
-        <img :src="item.image" alt=""  @load="imgLoad"/>
+        <img :src="item.image" alt="" @load="imgLoad"/>
       </a>
     </swiper-item>
   </swiper>
 </template>
 
 <script>
-import {Swiper, SwiperItem} from "components/common/swiper/index.js";
+import { Swiper, SwiperItem } from "components/common/swiper/index.js";
 
 export default {
   name: "HomeSwiper",
-  data () {
+  data() {
     return {
-      isload: false  
+      isload: false,
     }
   },
   props: {
@@ -32,13 +32,13 @@ export default {
   },
   methods: {
     imgLoad() {
-      if(!this.isload){
+      if (!this.isload) {
         this.$emit('swiperLoad')
         this.isload = true
       }
-      
-    }
-  }
+
+    },
+  },
 };
 </script>
 

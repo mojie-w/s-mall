@@ -18,7 +18,7 @@
       :pull-up-load="true"
       @pullingUp="loadMore"
     >
-      <home-swiper :banners="banners" @swiperLoad="swiperLoad" />
+      <home-swiper :banners="banners" @swiperLoad="swiperLoad"/>
       <recommend-view :recommends="recommends"></recommend-view>
       <feature-view></feature-view>
       <tab-control

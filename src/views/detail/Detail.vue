@@ -12,6 +12,7 @@ import DetailSwiper from "./childComps/DetailSwiper.vue";
 import DetailBaseInfo from "./childComps/DetailBaseInfo.vue";
 
 import { getDetail, Goods } from "network/detail";
+
 export default {
   name: "Detail",
   data() {
@@ -36,7 +37,7 @@ export default {
       this.goods = new Goods(
         data.itemInfo,
         data.columns,
-        data.shopInfo.services
+        data.shopInfo.services,
       );
     });
   },
