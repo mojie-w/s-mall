@@ -74,6 +74,8 @@ export default {
       isShowBackTop: false,
       tabOffsetTop: 0,
       isTabFixed: false,
+      saveY: 0,
+      positionY: 0,
     };
   },
   computed: {
@@ -97,6 +99,19 @@ export default {
       // created拿this.$ref 很可能拿不到
       this.$refs.scroll && refresh();
     });
+  },
+  destroyed() {
+    console.log("home 销毁");
+  },
+  activated() {
+    //刷新重新计算高度,否则高度经常计算出错
+    this.$refs.scroll.refresh()
+    this.$refs.scroll.scrollTo(0, this.saveY, 0);
+    // this.$refs.scroll.refresh()
+  },
+  deactivated() {
+    console.log("home 不活跃");
+    this.saveY = this.$refs.scroll.getScrollY();
   },
   methods: {
     // 事件监听相关
@@ -127,8 +142,13 @@ export default {
           break;
       }
       // console.log(this.currentType);
-      this.$refs.tabControl1.currentIndex = index
-      this.$refs.tabControl2.currentIndex = index
+      this.$refs.tabControl1.currentIndex = index;
+      this.$refs.tabControl2.currentIndex = index;
+      // console.log(this.tabOffsetTop);
+      // console.log("positionY" + this.positionY);
+      if (this.positionY >= this.tabOffsetTop) {
+        this.$refs.scroll.scrollTo(0, -this.tabOffsetTop, 0);
+      }
     },
     //回到顶部
     backClick() {
@@ -144,6 +164,7 @@ export default {
       this.isShowBackTop = -position.y > 1000;
       // 2.决定tabControl是否吸顶
       this.isTabFixed = -position.y > this.tabOffsetTop;
+      this.positionY = -position.y;
     },
     //上拉加载更多
     loadMore() {

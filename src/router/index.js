@@ -5,6 +5,7 @@ const Home = () => import('../views/home/Home.vue')
 const Category = () => import('../views/category/Category.vue')
 const ShopCart = () => import('../views/shopcart/ShopCart.vue')
 const Profile = () => import('../views/profile/Profile.vue')
+const Detail = () => import('../views/detail/Detail.vue')
 // 1. 安装router
 Vue.use(VueRouter)
 // 2.创建router
@@ -27,6 +28,10 @@ const routes = [{
   {
     path: '/profile',
     component: Profile,
+  },
+  {
+    path: '/detail/:iid',
+    component: Detail,
   },
 ]
 const router = new VueRouter({
