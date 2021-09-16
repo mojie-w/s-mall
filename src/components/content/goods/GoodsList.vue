@@ -12,21 +12,21 @@
 </template>
 
 <script>
-import GoodsListItem from "./GoodsListItem.vue";
+import GoodsListItem from './GoodsListItem.vue'
 
 export default {
   components: {
-    GoodsListItem,
+    GoodsListItem
   },
   props: {
     goods: {
       type: Array,
       default() {
-        return [];
-      },
-    },
-  },
-};
+        return []
+      }
+    }
+  }
+}
 </script>
 
 <style>

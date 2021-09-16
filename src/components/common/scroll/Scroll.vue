@@ -9,24 +9,24 @@
 </template>
 
 <script>
-import BScroll from "better-scroll";
+import BScroll from 'better-scroll'
 
 export default {
-  name: "Scroll",
+  name: 'Scroll',
   props: {
     probeType: {
       type: Number,
-      default: 0,
+      default: 0
     },
     pullUpLoad: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   data() {
     return {
-      scroll: null,
-    };
+      scroll: null
+    }
   },
   mounted() {
     //1.创建BScroll对象
@@ -40,20 +40,20 @@ export default {
       // },
       //滚动位置
       probeType: this.probeType,
-      pullUpLoad: this.pullUpLoad,
-    });
+      pullUpLoad: this.pullUpLoad
+    })
     //2.监听滚动的位置
-    this.scroll.on("scroll", (position) => {
+    this.scroll.on('scroll', position => {
       // console.log(position)
       //自定义一个事件,将position发出
-      this.$emit("scroll", position);
-    });
+      this.$emit('scroll', position)
+    })
     // 3.监听上拉事件
     if (this.pullUpLoad) {
-      this.scroll.on("pullingUp", () => {
+      this.scroll.on('pullingUp', () => {
         // console.log('上拉加载更多')
-        this.$emit("pullingUp");
-      });
+        this.$emit('pullingUp')
+      })
     }
   },
   methods: {
@@ -61,25 +61,25 @@ export default {
       // this.scroll 是BScroll对象
       // 先去判断this.scroll和this.scroll.scrollTo是否有值,有值再去调用this.scroll.scrollTo(x, y, time);
       // 以防后面调用时,this.scroll还没创建出来报错
-      this.scroll && this.scroll.scrollTo && this.scroll.scrollTo(x, y, time);
+      this.scroll && this.scroll.scrollTo && this.scroll.scrollTo(x, y, time)
       // this.scroll.scrollTo(x, y, time);
     },
     finishPullUp() {
-      this.scroll && this.scroll.scrollTo && this.scroll.finishPullUp();
+      this.scroll && this.scroll.scrollTo && this.scroll.finishPullUp()
     },
     refresh() {
-      console.log("-------------");
-      this.scroll && this.scroll.scrollTo && this.scroll.refresh();
+      console.log('-------------')
+      this.scroll && this.scroll.scrollTo && this.scroll.refresh()
     },
     getScrollY() {
       // if(this.scroll){
       //   return this.scroll.y
       // }
       return this.scroll ? this.scroll.y : 0
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
-<style scoped>
-</style>>
+<style scoped></style>
+>

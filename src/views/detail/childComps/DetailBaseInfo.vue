@@ -12,13 +12,9 @@
       <span>{{ goods.services[goods.services.length - 1].name }}</span>
     </div>
     <div class="info-service">
-      <span
-        class="info-service-item"
-        v-for="index in goods.services.length - 1"
-        :key="index"
-      >
-      <img :src="goods.services[index-1].icon" alt=""/>
-      <span>{{ goods.services[index - 1].name }}</span>
+      <span class="info-service-item" v-for="index in goods.services.length - 1" :key="index">
+        <img :src="goods.services[index - 1].icon" alt="" />
+        <span>{{ goods.services[index - 1].name }}</span>
       </span>
     </div>
   </div>
@@ -30,11 +26,11 @@ export default {
     goods: {
       type: Object,
       default() {
-        return {};
-      },
-    },
-  },
-};
+        return {}
+      }
+    }
+  }
+}
 </script>
 
 <style>
@@ -81,7 +77,7 @@ export default {
   line-height: 30px;
   display: flex;
   font-size: 13px;
-  border-bottom: 1px solid rgba(100, 100, 100, .1);
+  border-bottom: 1px solid rgba(100, 100, 100, 0.1);
   justify-content: space-between;
 }
 

@@ -1,6 +1,6 @@
 <template>
   <div class="goods-item" @click="itemClick">
-    <img :src="goodsItem.show.img" alt="" @load="imageLoad"/>
+    <img :src="goodsItem.show.img" alt="" @load="imageLoad" />
     <div class="goods-info">
       <p>{{ goodsItem.title }}</p>
       <span class="price">{{ goodsItem.price }}</span>
@@ -16,9 +16,9 @@ export default {
     goodsItem: {
       type: Object,
       default() {
-        return {};
-      },
-    },
+        return {}
+      }
+    }
   },
   methods: {
     imageLoad() {
@@ -30,9 +30,9 @@ export default {
       // console.log('跳转到详情页');
       // 动态路由
       this.$router.push('/detail/' + this.goodsItem.iid)
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style>
@@ -74,12 +74,12 @@ export default {
 }
 
 .goods-info .collect::before {
-  content: "";
+  content: '';
   position: absolute;
   left: -15px;
   top: -1px;
   width: 14px;
   height: 14px;
-  background: url("~assets/img/common/collect.svg") 0 0/14px 14px;
+  background: url('~assets/img/common/collect.svg') 0 0/14px 14px;
 }
 </style>

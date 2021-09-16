@@ -4,10 +4,8 @@
 
 <script>
 export default {
-  name: 'ShopCart',
+  name: 'ShopCart'
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

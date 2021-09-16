@@ -25,7 +25,8 @@
 
 body {
   /* 中文或者有空格加引号 */
-  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    '微软雅黑', Arial, sans-serif;
   user-select: none;
   /* 禁止用户在页面上选中文字或图片等 */
   -webkit-tap-highlight-color: transparent;

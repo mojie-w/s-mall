@@ -17,22 +17,22 @@ export default {
     titles: {
       type: Array,
       default() {
-        return [];
-      },
-    },
+        return []
+      }
+    }
   },
   data() {
     return {
-      currentIndex: 0,
-    };
+      currentIndex: 0
+    }
   },
   methods: {
     itemClick(index) {
-      this.currentIndex = index;
+      this.currentIndex = index
       this.$emit('tabClick', index)
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style>
