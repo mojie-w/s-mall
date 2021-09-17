@@ -19,13 +19,13 @@ export default {
     return {
       iid: null,
       topImages: [],
-      goods: {}
+      goods: {},
     }
   },
   components: {
     DetailNavBar,
     DetailSwiper,
-    DetailBaseInfo
+    DetailBaseInfo,
   },
   created() {
     this.iid = this.$route.params.iid
@@ -36,7 +36,7 @@ export default {
       //获取商品信息
       this.goods = new Goods(data.itemInfo, data.columns, data.shopInfo.services)
     })
-  }
+  },
 }
 </script>
 

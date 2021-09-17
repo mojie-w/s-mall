@@ -15,22 +15,22 @@ export default {
   name: 'DetailSwiper',
   components: {
     Swiper,
-    SwiperItem
+    SwiperItem,
   },
   props: {
     topImages: {
       type: Array,
       default() {
         return []
-      }
+      },
     },
     goods: {
       type: Object,
       default() {
         return {}
-      }
-    }
-  }
+      },
+    },
+  },
 }
 </script>
 

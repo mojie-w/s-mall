@@ -16,16 +16,16 @@ export default {
   props: {
     probeType: {
       type: Number,
-      default: 0
+      default: 0,
     },
     pullUpLoad: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
-      scroll: null
+      scroll: null,
     }
   },
   mounted() {
@@ -40,7 +40,7 @@ export default {
       // },
       //滚动位置
       probeType: this.probeType,
-      pullUpLoad: this.pullUpLoad
+      pullUpLoad: this.pullUpLoad,
     })
     //2.监听滚动的位置
     this.scroll.on('scroll', position => {
@@ -76,8 +76,8 @@ export default {
       //   return this.scroll.y
       // }
       return this.scroll ? this.scroll.y : 0
-    }
-  }
+    },
+  },
 }
 </script>
 

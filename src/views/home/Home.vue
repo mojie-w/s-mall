@@ -57,7 +57,7 @@ export default {
     RecommendView,
     FeatureView,
     Scroll,
-    BackTop
+    BackTop,
   },
   data() {
     return {
@@ -68,20 +68,20 @@ export default {
       goods: {
         pop: { page: 0, list: [] },
         new: { page: 0, list: [] },
-        sell: { page: 0, list: [] }
+        sell: { page: 0, list: [] },
       },
       currentType: 'pop',
       isShowBackTop: false,
       tabOffsetTop: 0,
       isTabFixed: false,
       saveY: 0,
-      positionY: 0
+      positionY: 0,
     }
   },
   computed: {
     showGoods() {
       return this.goods[this.currentType].list
-    }
+    },
   },
   created() {
     // 1.请求多个数据
@@ -197,8 +197,8 @@ export default {
 
         this.$refs.scroll.finishPullUp()
       })
-    }
-  }
+    },
+  },
 }
 </script>
 

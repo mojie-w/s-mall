@@ -16,16 +16,16 @@ import GoodsListItem from './GoodsListItem.vue'
 
 export default {
   components: {
-    GoodsListItem
+    GoodsListItem,
   },
   props: {
     goods: {
       type: Array,
       default() {
         return []
-      }
-    }
-  }
+      },
+    },
+  },
 }
 </script>
 

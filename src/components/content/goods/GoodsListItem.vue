@@ -17,8 +17,8 @@ export default {
       type: Object,
       default() {
         return {}
-      }
-    }
+      },
+    },
   },
   methods: {
     imageLoad() {
@@ -30,8 +30,8 @@ export default {
       // console.log('跳转到详情页');
       // 动态路由
       this.$router.push('/detail/' + this.goodsItem.iid)
-    }
-  }
+    },
+  },
 }
 </script>
 

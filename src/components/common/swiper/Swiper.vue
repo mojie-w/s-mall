@@ -23,21 +23,21 @@ export default {
   props: {
     interval: {
       type: Number,
-      default: 3000
+      default: 3000,
     },
     animDuration: {
       type: Number,
-      default: 300
+      default: 300,
     },
     moveRatio: {
       /* 滚动比例,超过比例滚到下一张 */
       type: Number,
-      default: 0.25
+      default: 0.25,
     },
     showIndicator: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
   data: function () {
     return {
@@ -45,7 +45,7 @@ export default {
       totalWidth: 0, // swiper的宽度
       swiperStyle: {}, // swiper样式
       currentIndex: 1, // 当前的index
-      scrolling: false // 是否正在滚动
+      scrolling: false, // 是否正在滚动
     }
   },
   mounted: function () {
@@ -211,8 +211,8 @@ export default {
 
       // 3.添加定时器
       this.startTimer()
-    }
-  }
+    },
+  },
 }
 </script>
 

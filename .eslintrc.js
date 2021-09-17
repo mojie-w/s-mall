@@ -4,33 +4,38 @@ module.exports = {
   parserOptions: {
     // 定义ESLint的解析器
     parser: 'babel-eslint',
-    sourceType: 'module'
+    sourceType: 'module',
   },
   // 指定代码的运行环境
   env: {
     browser: true,
     node: true,
-    es6: true
+    es6: true,
   },
   extends: [
     // 继承 vue 的标准特性
     'plugin:vue/essential',
     'eslint:recommended',
     // 避免与 prettier 冲突
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
   ],
-  // 自定义eslint规则，严格按照StandardJS
+  // 自定义eslint规则，按照StandardJS,有一定改动
   rules: {
-    'max-line-length': false, //****当eslint 报 长度限制的警告时，可以将其设置不限制
+    /*
+    eslint规则有三种级别
+      "off" 或者 0 :不启用这个规则
+      "warn" 或者 1 :出现问题报警告
+      "error" 或者 2 :出现问题报错误
+    */
     'vue/max-attributes-per-line': [
       2,
       {
         singleline: 10,
         multiline: {
           max: 1,
-          allowFirstLine: false
-        }
-      }
+          allowFirstLine: false,
+        },
+      },
     ],
     'vue/singleline-html-element-content-newline': 'off',
     'vue/multiline-html-element-content-newline': 'off',
@@ -41,8 +46,8 @@ module.exports = {
       2,
       2,
       {
-        SwitchCase: 1
-      }
+        SwitchCase: 1,
+      },
     ],
     // 单引号
     quotes: [
@@ -50,27 +55,27 @@ module.exports = {
       'single',
       {
         avoidEscape: true,
-        allowTemplateLiterals: true
-      }
+        allowTemplateLiterals: true,
+      },
     ],
     // 未使用的变量
     'no-unused-vars': [
       2,
       {
         vars: 'all',
-        args: 'after-used'
-      }
+        args: 'after-used',
+      },
     ],
     // 关键字前后空格
     'keyword-spacing': [
       2,
       {
         before: true,
-        after: true
-      }
+        after: true,
+      },
     ],
-    // function关键字和函数名后面的空格
-    'space-before-function-paren': [2, 'never'],
+    // function关键字和函数名后面的空格 //使用prettier的格式化方式,关闭检查
+    'space-before-function-paren': [0, 'never'],
     // 除了null,其他用===而不是==
     eqeqeq: ['error', 'always', { null: 'ignore' }],
     // 字符串拼接操作符直接用空格
@@ -80,16 +85,16 @@ module.exports = {
       2,
       {
         before: false,
-        after: true
-      }
+        after: true,
+      },
     ],
     // else必须和反花括号一行
     'brace-style': [
       2,
       '1tbs',
       {
-        allowSingleLine: true
-      }
+        allowSingleLine: true,
+      },
     ],
     // 多行 if 语句的的括号不能省
     curly: [2, 'multi-line'],
@@ -99,8 +104,8 @@ module.exports = {
     'no-multiple-empty-lines': [
       2,
       {
-        max: 1
-      }
+        max: 1,
+      },
     ],
     // 换行符在运算符的位置
     'operator-linebreak': [
@@ -109,9 +114,9 @@ module.exports = {
       {
         overrides: {
           '?': 'before',
-          ':': 'before'
-        }
-      }
+          ':': 'before',
+        },
+      },
     ],
     // 条件语句中赋值语句
     'no-cond-assign': 2,
@@ -121,11 +126,11 @@ module.exports = {
     camelcase: [
       0,
       {
-        properties: 'always'
-      }
+        properties: 'always',
+      },
     ],
-    // 不允许有多余的行末逗号
-    'comma-dangle': [2, 'never'],
+    // 不允许有多余的行末逗号(不启用这个规则)
+    'comma-dangle': [0, 'never'], // 0:不启用这个规则,1:出现问题警告,2:出现问题报错
     // 始终将逗号置于行末
     'comma-style': [2, 'last'],
     // 点号操作符须与属性需在同一行
@@ -137,16 +142,16 @@ module.exports = {
       2,
       {
         beforeColon: false,
-        afterColon: true
-      }
+        afterColon: true,
+      },
     ],
     // 构造函数要以大写字母开头, 但调用大写字母开头的函数不一定需要new
     'new-cap': [
       2,
       {
         newIsCap: true,
-        capIsNew: false
-      }
+        capIsNew: false,
+      },
     ],
     // 无参的构造函数调用时要带上括号
     'new-parens': 2,
@@ -200,8 +205,8 @@ module.exports = {
       2,
       {
         allowLoop: false,
-        allowSwitch: false
-      }
+        allowSwitch: false,
+      },
     ],
     'no-lone-blocks': 2,
     'no-mixed-spaces-and-tabs': 2,
@@ -234,8 +239,8 @@ module.exports = {
     'no-unneeded-ternary': [
       2,
       {
-        defaultAssignment: false
-      }
+        defaultAssignment: false,
+      },
     ],
     'no-unreachable': 2,
     'no-unsafe-finally': 2,
@@ -252,8 +257,8 @@ module.exports = {
       2,
       {
         before: false,
-        after: true
-      }
+        after: true,
+      },
     ],
     'space-before-blocks': [2, 'always'],
     'space-in-parens': [2, 'never'],
@@ -261,15 +266,15 @@ module.exports = {
       2,
       {
         words: true,
-        nonwords: false
-      }
+        nonwords: false,
+      },
     ],
     'spaced-comment': [
       2,
       'always',
       {
-        markers: ['global', 'globals', 'eslint', 'eslint-disable', '*package', '!', ',']
-      }
+        markers: ['global', 'globals', 'eslint', 'eslint-disable', '*package', '!', ','],
+      },
     ],
     'template-curly-spacing': [2, 'never'],
     'use-isnan': 2,
@@ -284,16 +289,16 @@ module.exports = {
       2,
       {
         before: true,
-        after: true
-      }
+        after: true,
+      },
     ],
     'eol-last': 2,
     'generator-star-spacing': [
       2,
       {
         before: true,
-        after: true
-      }
+        after: true,
+      },
     ],
     'handle-callback-err': [2, '^(err|error)$'],
     'jsx-quotes': [2, 'prefer-single'],
@@ -306,8 +311,8 @@ module.exports = {
     'one-var': [
       2,
       {
-        initialized: 'never'
-      }
+        initialized: 'never',
+      },
     ],
     'prefer-const': 2,
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
@@ -315,10 +320,10 @@ module.exports = {
       2,
       'always',
       {
-        objectsInObjects: false
-      }
+        objectsInObjects: false,
+      },
     ],
-    'array-bracket-spacing': [2, 'never']
+    'array-bracket-spacing': [2, 'never'],
   },
   // 当使用第三方的SDK时，eslint会报找不到，可以加入到globals，取消对这个的检查
   // rules: {
@@ -328,6 +333,6 @@ module.exports = {
   // },
 
   globals: {
-    fengmap: true
-  }
+    fengmap: true,
+  },
 }

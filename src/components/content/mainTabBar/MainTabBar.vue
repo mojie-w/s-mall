@@ -32,8 +32,8 @@ import TabBarItem from 'components/common/tarbar/TabBarItem.vue'
 export default {
   components: {
     TabBar,
-    TabBarItem
-  }
+    TabBarItem,
+  },
 }
 </script>
 
