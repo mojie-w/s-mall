@@ -19,6 +19,7 @@ module.exports = {
     // 避免与 prettier 冲突
     'plugin:prettier/recommended',
   ],
+  plugins: ['html'],
   // 自定义eslint规则，按照StandardJS,有一定改动
   rules: {
     /*
